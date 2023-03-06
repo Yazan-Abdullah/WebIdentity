@@ -1,0 +1,40 @@
+﻿@model WebIdentity.ViewModel.RegesterViewModel
+
+@{
+    ViewData["Title"] = "Regesters";
+}
+<h1>Regesters</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Regesters">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassWorld" class="control-label"></label>
+                <input asp-for="PassWorld" class="form-control" type="password"/>
+                <span asp-validation-for="PassWorld" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfermPassWorld" class="control-label"></label>
+                <input asp-for="ConfermPassWorld" class="form-control" type="password"/>
+                <span asp-validation-for="ConfermPassWorld" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
